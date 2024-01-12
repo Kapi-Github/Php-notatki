@@ -117,14 +117,47 @@
         // hours - godziny
         // mday - dzien miesiaca
         // wday - dzien tygodnia
-        // mon - miesiac jako $liczba
+        // mon - miesiac jako liczba
         // year - rok w postaci cztrecyfrowej
         // yday - numer kolejnego dnia roku
         // weekday - nazwa dnia tygdonia po angielsku
         // month - nazwa miesiace po angielsku
         // 0 - aktualne znacznik czasu
 
-        var_dump(getDate());
+        //FORMATOWANIE DATY date(format[, znacznik czasu]) - format okresla jakie inf nba temat daty powinny zostac zwrocone
+        // a - am,pm
+        // b - AM,PM
+        // c - Data i czas zgdone z formatem ISO np. 2013-03-03T15:25:12
+        // d - dzien miesiaca
+        // D - dzien tygodnia(3 litery)
+        // F - pelna nazwa miesiaca
+        // g - godzina 1 - 12
+        // G - godzina 1 - 24
+        // H - godzina 01 - 24
+        // i - minuty 01 - 59
+        // l - nazwa dnia tygodnia
+        // m - miesiac 01 - 12
+        // s - sekundy 01 - 59
+        // y - Rok (2 znaki)
+        // Y - Rok (4 znaki)
+
+        echo date("Y-m-d");
+        echo "<br>";
+        echo date("d-m-y");
+        echo "<br>";
+        echo date("H:i:s");
+        echo "<br>";
+
+        //mktime() - moze miec 6 argumentow - godzina, minuta, sekunda, miesiac, dzien miesiaca, rok
+
+        $months = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzien'];
+        $days = ['Poniedziałek', 'Wtorek', 'Sroda', 'Czwartek', 'Piątek', 'Sobota', 'Niedziela'];
+        $date = getDate();
+        $thisYear = mktime(0,0,0,1,1,2024);
+
+        echo "Ćw. 1 - ",$date['mday']," ",$months[$date['mon'] - 1]," ",$date['year'],"<br>";
+        echo "Ćw. 2 - ",$days[$date['wday'] - 1],"<br>";
+
     ?>
 </body>
 </html>
